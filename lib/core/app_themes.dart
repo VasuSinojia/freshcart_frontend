@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:freshcart_frontend/core/constants/ui_constants.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppThemes {
   static ThemeData get main {
@@ -7,42 +8,43 @@ class AppThemes {
       useMaterial3: false,
       primarySwatch: Colors.amber,
       scaffoldBackgroundColor: Colors.black,
-      fontFamily: 'Poppins',
       primaryColor: ApplicationColors.primaryGreen,
-      textTheme: const TextTheme(
-        displayLarge: TextStyle(
+      textTheme: TextTheme(
+        displayLarge: GoogleFonts.firaSans(
             fontSize: 93, fontWeight: FontWeight.w300, letterSpacing: -1.5),
-        displayMedium: TextStyle(
+        displayMedium: GoogleFonts.firaSans(
             fontSize: 58, fontWeight: FontWeight.w300, letterSpacing: -0.5),
-        displaySmall: TextStyle(fontSize: 47, fontWeight: FontWeight.w400),
-        headlineLarge: TextStyle(
+        displaySmall:
+            GoogleFonts.firaSans(fontSize: 47, fontWeight: FontWeight.w400),
+        headlineLarge: GoogleFonts.firaSans(
             fontSize: 33, fontWeight: FontWeight.w400, letterSpacing: 0),
-        headlineMedium: TextStyle(
+        headlineMedium: GoogleFonts.firaSans(
             fontSize: 33, fontWeight: FontWeight.w400, letterSpacing: 0.25),
-        headlineSmall: TextStyle(fontSize: 23, fontWeight: FontWeight.w400),
-        titleLarge: TextStyle(
+        headlineSmall:
+            GoogleFonts.firaSans(fontSize: 23, fontWeight: FontWeight.w400),
+        titleLarge: GoogleFonts.firaSans(
             fontSize: 19, fontWeight: FontWeight.w500, letterSpacing: 0.15),
-        titleMedium: TextStyle(
+        titleMedium: GoogleFonts.firaSans(
             fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: 0.15),
-        titleSmall: TextStyle(
+        titleSmall: GoogleFonts.firaSans(
             fontSize: 14, fontWeight: FontWeight.w500, letterSpacing: 0.1),
-        bodyLarge: TextStyle(
+        bodyLarge: GoogleFonts.firaSans(
           fontSize: 16,
           fontWeight: FontWeight.w400,
           letterSpacing: 0.5,
           color: Colors.white,
         ),
-        bodyMedium: TextStyle(
+        bodyMedium: GoogleFonts.firaSans(
           fontSize: 14,
           fontWeight: FontWeight.w400,
           letterSpacing: 0.25,
           color: Colors.white,
         ),
-        labelLarge: TextStyle(
+        labelLarge: GoogleFonts.firaSans(
             fontSize: 14, fontWeight: FontWeight.w500, letterSpacing: 1.25),
-        bodySmall: TextStyle(
+        bodySmall: GoogleFonts.firaSans(
             fontSize: 12, fontWeight: FontWeight.w400, letterSpacing: 0.4),
-        labelSmall: TextStyle(
+        labelSmall: GoogleFonts.firaSans(
             fontSize: 10, fontWeight: FontWeight.w400, letterSpacing: 1.5),
       ),
     );
