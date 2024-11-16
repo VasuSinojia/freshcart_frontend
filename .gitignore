@@ -25,3 +25,14 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+
+# macOS specific
+.DS_Store
+
+# VS Code
+.vscode
+.idea
+
+.firebase
+
+.fvm
