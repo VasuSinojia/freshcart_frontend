@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:freshcart_frontend/core/constants/asset_constants.dart';
+import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,9 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
       (_) {
         Future.delayed(
           const Duration(seconds: 1),
-          () {
-
-          },
+          () {},
         );
       },
     );
@@ -28,8 +27,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Get.theme.primaryColor,
       body: Center(
-        child: SvgPicture.asset(AssetConstants.roohAi),
+        child: SvgPicture.asset(
+          AssetConstants.splashLogo,
+        ),
       ),
     );
   }

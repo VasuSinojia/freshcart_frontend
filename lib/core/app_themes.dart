@@ -8,7 +8,7 @@ class AppThemes {
       primarySwatch: Colors.amber,
       scaffoldBackgroundColor: Colors.black,
       fontFamily: 'Poppins',
-      primaryColor: ApplicationColors.primaryGold,
+      primaryColor: ApplicationColors.primaryGreen,
       textTheme: const TextTheme(
         displayLarge: TextStyle(
             fontSize: 93, fontWeight: FontWeight.w300, letterSpacing: -1.5),

@@ -22,28 +22,7 @@ class UIConstants {
 }
 
 class ApplicationColors {
-  static const primaryRed = Color(0xFFEE6464);
-  static const lightAstro = Color(0xFFFFE8BE);
-  static const errorColor = Colors.red;
-  static const grey = Color(0xFFB3B3B3);
-  static const iconGrey = Color(0xFF525252);
-  static const primaryColorDark = Color(0xFFFF6666);
-  static const green = Color(0xFF33FE91);
-  static const textGreen = Color(0xFF00B664);
-  static const black = Color(0xFF000000);
-  static const lightGrey = Color(0xFF36363B);
-  static const textGrey = Color(0xFFB6B6BA);
-  static const fillWhite = Color(0xFFF8F7FE);
-  static const scaffoldLight = Color(0xFFFFF6DE);
-  static const scaffoldDark = Color(0xFF252529);
-  static const gossip = Color(0xFFEE6464);
-  static const astro = Color(0xFFFFC947);
-  static const love = Color(0xFFAF45D4);
-  static const blue = Color(0xFF0E9BC8);
-  static const lightRed = Color(0xFFFFEDED);
-  static const lightYellow = Color(0xFFFFF0DA);
-  static const gold = Color(0xFFFFD700);
-  static const primaryGold = Color(0xFFF9C564);
+  static const primaryGreen = Color(0xFF53B175);
 }
 
 class FontSize {
@@ -66,21 +45,15 @@ class Weight {
 
 class TextStyles {
   static const TextStyle h1 = TextStyle(
-      fontSize: FontSize.xXXXL,
-      fontWeight: Weight.bold,
-      color: ApplicationColors.black);
+      fontSize: FontSize.xXXXL, fontWeight: Weight.bold, color: Colors.black);
   static const TextStyle h2 = TextStyle(
-      fontSize: FontSize.xXXL,
-      fontWeight: Weight.heavy,
-      color: ApplicationColors.black);
+      fontSize: FontSize.xXXL, fontWeight: Weight.heavy, color: Colors.black);
   static const TextStyle h3 = TextStyle(
       fontSize: FontSize.M, fontWeight: Weight.heavy, color: Colors.white);
   static const TextStyle buttonText = TextStyle(
       fontSize: FontSize.L, fontWeight: Weight.heavy, color: Colors.white);
   static const TextStyle bodyText = TextStyle(
-      fontSize: FontSize.M,
-      fontWeight: Weight.normal,
-      color: ApplicationColors.black);
+      fontSize: FontSize.M, fontWeight: Weight.normal, color: Colors.black);
   static TextStyle smallText = const TextStyle(
       fontSize: FontSize.S, fontWeight: Weight.normal, color: Colors.white);
 }
