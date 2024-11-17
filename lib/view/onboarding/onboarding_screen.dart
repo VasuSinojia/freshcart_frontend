@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freshcart_frontend/core/constants/asset_constants.dart';
+import 'package:freshcart_frontend/modules/bindings/auth_binding.dart';
 import 'package:freshcart_frontend/view/onboarding/login_screen.dart';
 import 'package:freshcart_frontend/view/widgets/custom_button.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
@@ -49,7 +49,7 @@ class OnboardingScreen extends StatelessWidget {
                   CustomButton(
                     title: "Continue",
                     onTap: () {
-                      Get.to(() => LoginScreen());
+                      Get.to(() => LoginScreen(), binding: AuthBinding());
                     },
                   ),
                   const SizedBox(height: 100.0),

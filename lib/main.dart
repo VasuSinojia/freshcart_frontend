@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:freshcart_frontend/core/app_themes.dart';
+import 'package:freshcart_frontend/core/injection_container.dart';
 import 'package:freshcart_frontend/view/splash_screen.dart';
 import 'package:get/get.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await initializeDependencies();
   runApp(const MyApp());
 }
 

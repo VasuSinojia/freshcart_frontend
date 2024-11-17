@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freshcart_frontend/core/constants/asset_constants.dart';
-import 'package:freshcart_frontend/view/onboarding/signup_screen.dart';
+import 'package:freshcart_frontend/modules/controllers/auth_controller.dart';
+import 'package:freshcart_frontend/view/onboarding/login_screen.dart';
 import 'package:freshcart_frontend/view/widgets/custom_button.dart';
 import 'package:freshcart_frontend/view/widgets/custom_textfield.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
-  LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  SignUpScreen({super.key});
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,7 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 40.0),
               Text(
-                "Log In",
+                "Sign Up",
                 style: Theme.of(context)
                     .textTheme
                     .headlineLarge
@@ -42,13 +44,18 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 10.0),
               Text(
-                "Enter your email and password",
+                "Enter your credentials to continue",
                 style: Theme.of(context)
                     .textTheme
                     .bodyMedium
                     ?.copyWith(color: Colors.black),
               ),
               const SizedBox(height: 100.0),
+              CustomTextField(
+                title: "Name",
+                controller: nameController,
+              ),
+              const SizedBox(height: 30.0),
               CustomTextField(
                 title: "Email",
                 controller: emailController,
@@ -61,10 +68,16 @@ class LoginScreen extends StatelessWidget {
               ),
               const SizedBox(height: 60.0),
               CustomButton(
-                title: "Log In",
-                onTap: () {},
+                title: "Sign Up",
+                onTap: () {
+                  Get.find<AuthController>().signUp(
+                    name: nameController.text.trim(),
+                    email: emailController.text.trim(),
+                    password: passwordController.text.trim(),
+                  );
+                },
               ),
-              SizedBox(height: 70.0),
+              const SizedBox(height: 70.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -77,10 +90,10 @@ class LoginScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(()=> SignUpScreen());
+                      Get.back();
                     },
                     child: Text(
-                      " Sign Up",
+                      " Log In",
                       style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                           color: Colors.green, fontWeight: FontWeight.bold),
                     ),
