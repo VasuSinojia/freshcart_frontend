@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freshcart_frontend/core/constants/asset_constants.dart';
+import 'package:freshcart_frontend/modules/controllers/auth_controller.dart';
 import 'package:freshcart_frontend/view/onboarding/signup_screen.dart';
 import 'package:freshcart_frontend/view/widgets/custom_button.dart';
 import 'package:freshcart_frontend/view/widgets/custom_textfield.dart';
@@ -62,7 +63,12 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(height: 60.0),
               CustomButton(
                 title: "Log In",
-                onTap: () {},
+                onTap: () {
+                  Get.find<AuthController>().login(
+                    email: emailController.text.trim(),
+                    password: passwordController.text.trim(),
+                  );
+                },
               ),
               SizedBox(height: 70.0),
               Row(
@@ -77,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Get.to(()=> SignUpScreen());
+                      Get.to(() => SignUpScreen());
                     },
                     child: Text(
                       " Sign Up",
