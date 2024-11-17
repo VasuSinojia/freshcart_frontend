@@ -25,6 +25,21 @@ class ApplicationColors {
   static const primaryGreen = Color(0xFF53B175);
 }
 
+class Swatch {
+  MaterialColor myGreen = MaterialColor(0xFF53B175, {
+    50: Color(0xFF53B175).withOpacity(0.005),
+    100: Color(0xFF53B175).withOpacity(0.1),
+    200: Color(0xFF53B175).withOpacity(0.2),
+    300: Color(0xFF53B175).withOpacity(0.3),
+    400: Color(0xFF53B175).withOpacity(0.4),
+    500: Color(0xFF53B175).withOpacity(0.5),
+    600: Color(0xFF53B175).withOpacity(0.6),
+    700: Color(0xFF53B175).withOpacity(0.7),
+    800: Color(0xFF53B175).withOpacity(0.8),
+    900: Color(0xFF53B175).withOpacity(0.9)
+  });
+}
+
 class FontSize {
   static const double xS = 9.0;
   static const double S = 10.0;

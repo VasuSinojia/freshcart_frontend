@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freshcart_frontend/core/constants/asset_constants.dart';
+import 'package:freshcart_frontend/view/onboarding/login_screen.dart';
 import 'package:freshcart_frontend/view/widgets/custom_button.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -47,7 +48,9 @@ class OnboardingScreen extends StatelessWidget {
                   const SizedBox(height: 50.0),
                   CustomButton(
                     title: "Continue",
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(() => LoginScreen());
+                    },
                   ),
                   const SizedBox(height: 100.0),
                 ],

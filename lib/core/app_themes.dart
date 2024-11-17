@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:freshcart_frontend/core/constants/ui_constants.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppThemes {
   static ThemeData get main {
     return ThemeData(
       useMaterial3: false,
-      primarySwatch: Colors.amber,
-      scaffoldBackgroundColor: Colors.black,
+      primarySwatch: Swatch().myGreen,
       primaryColor: ApplicationColors.primaryGreen,
+      inputDecorationTheme: InputDecorationTheme(
+        fillColor: Get.theme.primaryColor,
+        focusColor: Get.theme.primaryColor,
+      ),
       textTheme: TextTheme(
         displayLarge: GoogleFonts.firaSans(
             fontSize: 93, fontWeight: FontWeight.w300, letterSpacing: -1.5),
