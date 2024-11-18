@@ -4,6 +4,7 @@ import 'package:freshcart_frontend/core/services/alert_service.dart';
 import 'package:freshcart_frontend/domain/usecases/login.dart'
     as login_use_case;
 import 'package:freshcart_frontend/domain/usecases/register.dart';
+import 'package:freshcart_frontend/view/home_screen.dart';
 import 'package:get/get.dart';
 import 'package:loader_overlay/loader_overlay.dart';
 
@@ -57,6 +58,7 @@ class AuthController extends GetxController {
           title: "Success",
           subtitle: "Account Successfully Created",
         );
+        Get.offAll(() => const HomeScreen());
       } else if (response.error != null) {
         AlertService.showSnackBar(
           snackBarType: SnackBarType.Error,
