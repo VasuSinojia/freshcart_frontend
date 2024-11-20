@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freshcart_frontend/core/constants/asset_constants.dart';
 import 'package:freshcart_frontend/modules/controllers/auth_controller.dart';
-import 'package:freshcart_frontend/view/onboarding/login_screen.dart';
 import 'package:freshcart_frontend/view/widgets/custom_button.dart';
 import 'package:freshcart_frontend/view/widgets/custom_textfield.dart';
 import 'package:get/get.dart';

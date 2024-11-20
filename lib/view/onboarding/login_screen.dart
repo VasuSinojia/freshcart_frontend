@@ -70,7 +70,7 @@ class LoginScreen extends StatelessWidget {
                   );
                 },
               ),
-              SizedBox(height: 70.0),
+              const SizedBox(height: 70.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

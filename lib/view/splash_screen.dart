@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:freshcart_frontend/core/constants/asset_constants.dart';
 import 'package:freshcart_frontend/core/injection_container.dart';
 import 'package:freshcart_frontend/core/services/auth_service.dart';
-import 'package:freshcart_frontend/view/onboarding/onboarding_screen.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
