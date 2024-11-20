@@ -64,7 +64,7 @@ class _AuthApiService implements AuthApiService {
   }
 
   @override
-  Future<HttpResponse<BaseResponseModel>> login({
+  Future<HttpResponse<LoginModel>> login({
     required String email,
     required String password,
   }) async {
@@ -75,7 +75,7 @@ class _AuthApiService implements AuthApiService {
       'email': email,
       'password': password,
     };
-    final _options = _setStreamType<HttpResponse<BaseResponseModel>>(Options(
+    final _options = _setStreamType<HttpResponse<LoginModel>>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
@@ -92,9 +92,9 @@ class _AuthApiService implements AuthApiService {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late BaseResponseModel _value;
+    late LoginModel _value;
     try {
-      _value = BaseResponseModel.fromJson(_result.data!);
+      _value = LoginModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

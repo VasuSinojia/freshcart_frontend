@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:freshcart_frontend/core/resources/data_state.dart';
 import 'package:freshcart_frontend/data/data_sources/remote/auth/auth_api_service.dart';
 import 'package:freshcart_frontend/data/models/base_response.dart';
+import 'package:freshcart_frontend/data/models/login_model.dart';
 import 'package:freshcart_frontend/domain/repository/auth_repository.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
@@ -10,7 +11,7 @@ class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl(this._authApiService);
 
   @override
-  Future<DataState<BaseResponseModel>> login(
+  Future<DataState<LoginModel>> login(
       {required String email, required String password}) async {
     try {
       final response = await _authApiService.login(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:freshcart_frontend/core/constants/asset_constants.dart';
+import 'package:freshcart_frontend/core/injection_container.dart';
+import 'package:freshcart_frontend/core/services/auth_service.dart';
 import 'package:freshcart_frontend/view/onboarding/onboarding_screen.dart';
 import 'package:get/get.dart';
 
@@ -17,12 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback(
       (_) {
-        Future.delayed(
-          const Duration(seconds: 3),
-          () {
-            Get.offAll(() => const OnboardingScreen());
-          },
-        );
+        sl<AuthService>().checkUser();
       },
     );
   }

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:freshcart_frontend/core/constants/api_constants.dart';
+import 'package:freshcart_frontend/core/services/auth_service.dart';
 import 'package:freshcart_frontend/core/services/logging_interceptor.dart';
 import 'package:freshcart_frontend/data/data_sources/remote/auth/auth_api_service.dart';
 import 'package:freshcart_frontend/data/repository/auth_repository_impl.dart';
@@ -16,6 +17,11 @@ Future<void> initializeDependencies() async {
   // ==========================================
   final baseDio = Dio(BaseOptions(baseUrl: APIConstants.baseProdURL));
   sl.registerSingleton<Dio>(baseDio);
+
+  // ==========================================
+  // App Services
+  // ==========================================
+  sl.registerSingleton<AuthService>(AuthService(sl()));
 
   // ==========================================
   // Api Services

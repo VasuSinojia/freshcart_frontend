@@ -1,6 +1,7 @@
 import 'package:freshcart_frontend/core/constants/enums.dart';
 import 'package:freshcart_frontend/core/injection_container.dart';
 import 'package:freshcart_frontend/core/services/alert_service.dart';
+import 'package:freshcart_frontend/core/services/auth_service.dart';
 import 'package:freshcart_frontend/domain/usecases/login.dart'
     as login_use_case;
 import 'package:freshcart_frontend/domain/usecases/register.dart';
@@ -53,6 +54,10 @@ class AuthController extends GetxController {
         password: password,
       ));
       if (response.data != null) {
+        final authService = sl<AuthService>();
+        await authService.setAuthToken(response.data?.token ?? "");
+        await authService.setLoggedIn();
+        authService.checkUser();
         AlertService.showSnackBar(
           snackBarType: SnackBarType.Success,
           title: "Success",

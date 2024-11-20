@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:freshcart_frontend/core/constants/api_constants.dart';
 import 'package:freshcart_frontend/data/models/base_response.dart';
+import 'package:freshcart_frontend/data/models/login_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'auth_api_service.g.dart';
@@ -17,7 +18,7 @@ abstract class AuthApiService {
   });
 
   @POST(APIConstants.login)
-  Future<HttpResponse<BaseResponseModel>> login({
+  Future<HttpResponse<LoginModel>> login({
     @Field('email') required String email,
     @Field('password') required String password,
   });
