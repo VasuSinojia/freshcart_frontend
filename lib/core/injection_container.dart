@@ -31,7 +31,7 @@ Future<void> initializeDependencies() async {
   // ==========================================
   // Repositories
   // ==========================================
-  sl.registerSingleton<CategoryRepository>(AuthRepositoryImpl(sl()));
+  sl.registerSingleton<AuthRepository>(AuthRepositoryImpl(sl()));
 
   // ==========================================
   // UseCases
