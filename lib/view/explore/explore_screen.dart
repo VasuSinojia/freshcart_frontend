@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:freshcart_frontend/core/constants/ui_constants.dart';
+import 'package:freshcart_frontend/data/models/category/category_response_model.dart';
+import 'package:freshcart_frontend/modules/controllers/explore_controller.dart';
 import 'package:freshcart_frontend/view/explore/widgets/product_card.dart';
+import 'package:get/get.dart';
 
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final exploreController = Get.find<ExploreController>();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -19,22 +23,40 @@ class ExploreScreen extends StatelessWidget {
               ?.copyWith(fontSize: FontSize.xXXXL),
         ),
       ),
-      body: GridView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 15.0,
-          mainAxisSpacing: 15.0,
-        ),
-        itemBuilder: (context, index) {
-          return const ProductCard(
-            name: "Hello asdfasdf asdf asdf asdf asdf ",
-            image:
-                "https://freshcartbucket.s3.eu-north-1.amazonaws.com/beverages.png",
-            color: Colors.green,
+      body: Obx(() {
+        if (exploreController.isLoading.value) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (exploreController.categories.isEmpty) {
+          return const Center(
+            child: Text("No Data Found."),
           );
-        },
-      ),
+        }
+        return RefreshIndicator(
+          onRefresh: () async {
+            exploreController.fetchCategories();
+          },
+          child: GridView.builder(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 15.0,
+              mainAxisSpacing: 15.0,
+            ),
+            itemCount: exploreController.categories.length,
+            itemBuilder: (context, index) {
+              Categories category =
+                  exploreController.categories.toList()[index];
+              return ProductCard(
+                name: category.name ?? "",
+                image: category.imageUrl ?? "",
+                color: Colors.green,
+              );
+            },
+          ),
+        );
+      }),
     );
   }
 }
