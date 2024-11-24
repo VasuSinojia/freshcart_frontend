@@ -48,10 +48,11 @@ class ExploreScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               Categories category =
                   exploreController.categories.toList()[index];
+              final colorValue = int.parse("0xFF" "${category.colorCode}");
               return ProductCard(
                 name: category.name ?? "",
                 image: category.imageUrl ?? "",
-                color: Colors.green,
+                color: Color(colorValue),
               );
             },
           ),
