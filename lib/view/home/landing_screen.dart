@@ -9,7 +9,9 @@ class LandingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final landingController = Get.find<LandingController>();
     return Scaffold(
-      body: const SizedBox(),
+      body: Obx(() {
+        return landingController.body;
+      }),
       bottomNavigationBar: Obx(() {
         return BottomNavigationBar(
           items: const [
