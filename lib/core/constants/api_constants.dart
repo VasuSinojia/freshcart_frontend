@@ -10,4 +10,7 @@ class APIConstants {
 
   static const String register = "/register";
   static const String login = "/login";
+
+  // Categories
+  static const String getCategoriesRoute = "/categories";
 }
