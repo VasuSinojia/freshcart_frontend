@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:freshcart_frontend/core/resources/data_state.dart';
 import 'package:freshcart_frontend/core/resources/usecase/usecase.dart';
-import 'package:freshcart_frontend/data/models/category/category_response_model.dart';
 import 'package:freshcart_frontend/data/models/category/products_response_model.dart';
 import 'package:freshcart_frontend/domain/repository/category_repository.dart';
 

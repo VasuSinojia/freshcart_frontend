@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:freshcart_frontend/core/constants/ui_constants.dart';
 import 'package:freshcart_frontend/data/models/category/product.dart';
 import 'package:freshcart_frontend/view/widgets/add_to_cart_button.dart';
 
