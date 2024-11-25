@@ -45,6 +45,7 @@ class ExploreProductScreen extends StatelessWidget {
               crossAxisCount: 2,
               crossAxisSpacing: 15.0,
               mainAxisSpacing: 15.0,
+              childAspectRatio: 0.9,
             ),
             itemCount: exploreProductController.products.length,
             itemBuilder: (context, index) {

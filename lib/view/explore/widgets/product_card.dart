@@ -19,7 +19,7 @@ class ProductCard extends StatelessWidget {
           width: 1.3,
         ),
       ),
-      padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -31,13 +31,16 @@ class ProductCard extends StatelessWidget {
           const SizedBox(height: 20.0),
           Flexible(
             fit: FlexFit.loose,
-            child: Text(
-              product.name ?? "",
-              style: Theme.of(context)
-                  .textTheme
-                  .titleLarge
-                  ?.copyWith(fontSize: FontSize.xXXL),
-              maxLines: 2,
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                product.name ?? "",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge
+                    ?.copyWith(fontSize: 24.0),
+                maxLines: 2,
+              ),
             ),
           ),
           const SizedBox(height: 30.0),

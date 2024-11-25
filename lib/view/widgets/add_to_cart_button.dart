@@ -13,10 +13,13 @@ class AddToCartButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Get.theme.primaryColor,
-          borderRadius: BorderRadius.circular(18.0),
+          borderRadius: BorderRadius.circular(14.0),
         ),
-        padding: const EdgeInsets.all(15.0),
-        child: const Icon(Icons.add),
+        padding: const EdgeInsets.all(8.0),
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
       ),
     );
   }
