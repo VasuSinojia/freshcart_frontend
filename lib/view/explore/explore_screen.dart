@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freshcart_frontend/core/constants/ui_constants.dart';
 import 'package:freshcart_frontend/data/models/category/category_response_model.dart';
 import 'package:freshcart_frontend/modules/controllers/explore_controller.dart';
+import 'package:freshcart_frontend/view/explore/explore_product_screen.dart';
 import 'package:freshcart_frontend/view/explore/widgets/category_card.dart';
 import 'package:get/get.dart';
 
@@ -53,6 +54,11 @@ class ExploreScreen extends StatelessWidget {
                 name: category.name ?? "",
                 image: category.imageUrl ?? "",
                 color: Color(colorValue),
+                onTap: () {
+                  Get.to(
+                    () => ExploreProductScreen(categoryId: category.id ?? 0),
+                  );
+                },
               );
             },
           ),
