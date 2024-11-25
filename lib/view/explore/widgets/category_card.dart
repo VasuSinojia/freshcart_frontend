@@ -2,12 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:freshcart_frontend/core/constants/ui_constants.dart';
 
-class ProductCard extends StatelessWidget {
+class CategoryCard extends StatelessWidget {
   final String name;
   final String image;
   final Color color;
 
-  const ProductCard({
+  const CategoryCard({
     super.key,
     required this.name,
     required this.image,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:freshcart_frontend/core/constants/ui_constants.dart';
 import 'package:freshcart_frontend/data/models/category/category_response_model.dart';
 import 'package:freshcart_frontend/modules/controllers/explore_controller.dart';
-import 'package:freshcart_frontend/view/explore/widgets/product_card.dart';
+import 'package:freshcart_frontend/view/explore/widgets/category_card.dart';
 import 'package:get/get.dart';
 
 class ExploreScreen extends StatelessWidget {
@@ -49,7 +49,7 @@ class ExploreScreen extends StatelessWidget {
               Categories category =
                   exploreController.categories.toList()[index];
               final colorValue = int.parse("0xFF" "${category.colorCode}");
-              return ProductCard(
+              return CategoryCard(
                 name: category.name ?? "",
                 image: category.imageUrl ?? "",
                 color: Color(colorValue),
