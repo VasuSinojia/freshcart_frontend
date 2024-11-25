@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:freshcart_frontend/core/constants/api_constants.dart';
 import 'package:freshcart_frontend/data/models/category/category_response_model.dart';
+import 'package:freshcart_frontend/data/models/category/products_response_model.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'category_api_service.g.dart';
@@ -11,4 +12,9 @@ abstract class CategoryApiService {
 
   @GET(APIConstants.getCategoriesRoute)
   Future<HttpResponse<CategoryResponseModel>> getCategories();
+
+  @GET(APIConstants.getProductsByCategoryIdRoute)
+  Future<HttpResponse<GetProductsResponseModel>> getProductsByCategoryId({
+    @Query("category_id") required String categoryId,
+  });
 }

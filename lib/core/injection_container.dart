@@ -11,6 +11,7 @@ import 'package:freshcart_frontend/domain/repository/category_repository.dart';
 import 'package:freshcart_frontend/domain/usecases/auth/login.dart';
 import 'package:freshcart_frontend/domain/usecases/auth/register.dart';
 import 'package:freshcart_frontend/domain/usecases/category/get_categories.dart';
+import 'package:freshcart_frontend/domain/usecases/category/get_products_by_category_id.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
@@ -49,6 +50,8 @@ Future<void> initializeDependencies() async {
 
   // Category
   sl.registerSingleton<GetCategoriesUseCase>(GetCategoriesUseCase(sl()));
+  sl.registerSingleton<GetProductsByCategoryIdUseCase>(
+      GetProductsByCategoryIdUseCase(sl()));
 
   // ==========================================
   // Interceptors
