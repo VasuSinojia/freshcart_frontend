@@ -2,9 +2,9 @@ import 'package:freshcart_frontend/core/constants/enums.dart';
 import 'package:freshcart_frontend/core/injection_container.dart';
 import 'package:freshcart_frontend/core/services/alert_service.dart';
 import 'package:freshcart_frontend/core/services/auth_service.dart';
-import 'package:freshcart_frontend/domain/usecases/login.dart'
+import 'package:freshcart_frontend/domain/usecases/auth/login.dart'
     as login_use_case;
-import 'package:freshcart_frontend/domain/usecases/register.dart';
+import 'package:freshcart_frontend/domain/usecases/auth/register.dart';
 import 'package:freshcart_frontend/view/home_screen.dart';
 import 'package:get/get.dart';
 import 'package:loader_overlay/loader_overlay.dart';

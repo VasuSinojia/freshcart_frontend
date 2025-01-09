@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:freshcart_frontend/view/home/home_screen.dart';
+import 'package:freshcart_frontend/modules/bindings/landing_binding.dart';
+import 'package:freshcart_frontend/view/home/landing_screen.dart';
 import 'package:freshcart_frontend/view/onboarding/onboarding_screen.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -39,7 +40,10 @@ class AuthService {
   Future<void> checkUser() async {
     var loggedIn = await isLoggedIn();
     if (loggedIn) {
-      Get.offAll(() => const HomeScreen());
+      Get.offAll(
+        () => const LandingScreen(),
+        binding: LandingBinding(),
+      );
       setAuthTokenToHeader();
     } else {
       Get.to(() => const OnboardingScreen());
