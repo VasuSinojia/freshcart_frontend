@@ -9,4 +9,8 @@ abstract class CartRepository {
   });
 
   Future<DataState<CartResponseModel>> getCart();
+
+  Future<DataState<BaseResponseModel>> deleteFromCart({
+    required int productId,
+  });
 }

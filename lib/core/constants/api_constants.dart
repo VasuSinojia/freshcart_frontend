@@ -18,4 +18,5 @@ class APIConstants {
   // Cart
   static const String addToCart = "/cart";
   static const String getCart = "/cart";
+  static const String deleteFromCart = "/cart";
 }
