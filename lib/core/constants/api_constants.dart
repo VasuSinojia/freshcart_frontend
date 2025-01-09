@@ -14,4 +14,8 @@ class APIConstants {
   // Categories
   static const String getCategoriesRoute = "/categories";
   static const String getProductsByCategoryIdRoute = "/products";
+
+  // Cart
+  static const String addToCart = "/cart";
+  static const String getCart = "/cart";
 }
