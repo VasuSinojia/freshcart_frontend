@@ -22,42 +22,40 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            widget.title,
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium
-                ?.copyWith(color: Colors.black54),
-          ),
-          TextField(
-            controller: widget.controller,
-            obscureText: showPassword,
-            cursorColor: Get.theme.primaryColor,
-            decoration: InputDecoration(
-              focusColor: Get.theme.primaryColor,
-              focusedBorder: UnderlineInputBorder(
-                borderSide: BorderSide(color: Get.theme.primaryColor),
-              ),
-              suffixIcon: widget.isPassword
-                  ? GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          showPassword = !showPassword;
-                        });
-                      },
-                      child: Icon(
-                        showPassword ? Icons.visibility : Icons.visibility_off,
-                      ),
-                    )
-                  : null,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          widget.title,
+          style: Theme.of(context)
+              .textTheme
+              .titleMedium
+              ?.copyWith(color: Colors.black54),
+        ),
+        TextField(
+          controller: widget.controller,
+          obscureText: showPassword,
+          cursorColor: Get.theme.primaryColor,
+          decoration: InputDecoration(
+            focusColor: Get.theme.primaryColor,
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Get.theme.primaryColor),
             ),
-          )
-        ],
-      ),
+            suffixIcon: widget.isPassword
+                ? GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        showPassword = !showPassword;
+                      });
+                    },
+                    child: Icon(
+                      showPassword ? Icons.visibility : Icons.visibility_off,
+                    ),
+                  )
+                : null,
+          ),
+        )
+      ],
     );
   }
 }
