@@ -19,7 +19,7 @@ abstract class CartApiService {
   @GET(APIConstants.getCart)
   Future<HttpResponse<CartResponseModel>> getCart();
 
-  @DELETE(APIConstants.getCart)
+  @DELETE(APIConstants.deleteFromCart)
   Future<HttpResponse<BaseResponseModel>> deleteFromCart({
     @Query('product_id') required int productId,
   });
