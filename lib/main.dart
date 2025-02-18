@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitUp,
     ]);
     return GlobalLoaderOverlay(
-      overlayColor: Colors.white60.withOpacity(0.3),
+      overlayColor: Colors.white60.withValues(alpha: 0.3),
       overlayWidgetBuilder: (_) => Center(
         child: SizedBox(
           height: 32.0,

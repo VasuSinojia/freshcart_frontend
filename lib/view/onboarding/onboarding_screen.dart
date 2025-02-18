@@ -21,7 +21,7 @@ class OnboardingScreen extends StatelessWidget {
               AssetConstants.onboardingBg,
               fit: BoxFit.cover,
               colorBlendMode: BlendMode.darken,
-              color: Colors.black.withOpacity(0.5),
+              color: Colors.black.withValues(alpha: 0.5),
             ),
             Padding(
               padding: const EdgeInsets.all(16.0),
@@ -42,7 +42,7 @@ class OnboardingScreen extends StatelessWidget {
                   Text(
                     "Get your groceries as fast as in one hour.",
                     style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          color: Colors.white.withOpacity(0.7),
+                          color: Colors.white.withValues(alpha: 0.7),
                         ),
                   ),
                   const SizedBox(height: 50.0),
