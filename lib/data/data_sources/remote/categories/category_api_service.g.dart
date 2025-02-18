@@ -6,14 +6,10 @@ part of 'category_api_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element,unnecessary_string_interpolations
 
 class _CategoryApiService implements CategoryApiService {
-  _CategoryApiService(
-    this._dio, {
-    this.baseUrl,
-    this.errorLogger,
-  });
+  _CategoryApiService(this._dio, {this.baseUrl, this.errorLogger});
 
   final Dio _dio;
 
@@ -27,23 +23,16 @@ class _CategoryApiService implements CategoryApiService {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options =
-        _setStreamType<HttpResponse<CategoryResponseModel>>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/categories',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            )));
+    final _options = _setStreamType<HttpResponse<CategoryResponseModel>>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/categories',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late CategoryResponseModel _value;
     try {
@@ -57,29 +46,23 @@ class _CategoryApiService implements CategoryApiService {
   }
 
   @override
-  Future<HttpResponse<GetProductsResponseModel>> getProductsByCategoryId(
-      {required String categoryId}) async {
+  Future<HttpResponse<GetProductsResponseModel>> getProductsByCategoryId({
+    required String categoryId,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{r'category_id': categoryId};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options =
-        _setStreamType<HttpResponse<GetProductsResponseModel>>(Options(
-      method: 'GET',
-      headers: _headers,
-      extra: _extra,
-    )
-            .compose(
-              _dio.options,
-              '/products',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(
-                baseUrl: _combineBaseUrls(
-              _dio.options.baseUrl,
-              baseUrl,
-            )));
+    final _options = _setStreamType<HttpResponse<GetProductsResponseModel>>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/products',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
     late GetProductsResponseModel _value;
     try {
@@ -105,10 +88,7 @@ class _CategoryApiService implements CategoryApiService {
     return requestOptions;
   }
 
-  String _combineBaseUrls(
-    String dioBaseUrl,
-    String? baseUrl,
-  ) {
+  String _combineBaseUrls(String dioBaseUrl, String? baseUrl) {
     if (baseUrl == null || baseUrl.trim().isEmpty) {
       return dioBaseUrl;
     }
