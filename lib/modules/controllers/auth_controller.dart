@@ -1,5 +1,6 @@
 import 'package:freshcart_frontend/core/constants/enums.dart';
 import 'package:freshcart_frontend/core/injection_container.dart';
+import 'package:freshcart_frontend/core/logger.dart';
 import 'package:freshcart_frontend/core/services/alert_service.dart';
 import 'package:freshcart_frontend/core/services/auth_service.dart';
 import 'package:freshcart_frontend/domain/usecases/auth/login.dart'
@@ -36,7 +37,7 @@ class AuthController extends GetxController {
         );
       }
     } catch (e) {
-      print("exception $e");
+      Logger.logMessage(message: "exception $e");
     } finally {
       Get.context?.loaderOverlay.hide();
     }
@@ -73,7 +74,7 @@ class AuthController extends GetxController {
         );
       }
     } catch (e) {
-      print("exception $e");
+      Logger.logMessage(message: "exception $e");
     } finally {
       Get.context?.loaderOverlay.hide();
     }
