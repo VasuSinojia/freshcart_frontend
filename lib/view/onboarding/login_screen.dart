@@ -10,8 +10,8 @@ import 'package:get/get.dart';
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
 
-  final emailController = TextEditingController();
-  final passwordController = TextEditingController();
+  final emailController = TextEditingController(text: "vasu@example.com");
+  final passwordController = TextEditingController(text: "password");
 
   @override
   Widget build(BuildContext context) {

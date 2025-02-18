@@ -51,4 +51,25 @@ class CartRepositoryImpl implements CartRepository {
       return DataFailed(e);
     }
   }
+
+  @override
+  Future<DataState<BaseResponseModel>> deleteFromCart(
+      {required int productId}) async {
+    try {
+      final response =
+          await _cartApiService.deleteFromCart(productId: productId);
+
+      if (response.response.statusCode == 200) {
+        return DataSuccess(response.data);
+      } else {
+        return DataFailed(DioException(
+            error: response.response.statusCode,
+            message: response.response.statusMessage,
+            response: response.response,
+            requestOptions: response.response.requestOptions));
+      }
+    } on DioException catch (e) {
+      return DataFailed(e);
+    }
+  }
 }
