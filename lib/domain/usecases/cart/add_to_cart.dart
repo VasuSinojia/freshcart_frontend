@@ -4,13 +4,13 @@ import 'package:freshcart_frontend/data/models/base_response.dart';
 import 'package:freshcart_frontend/domain/repository/cart_repository.dart';
 
 class AddToCartUseCase
-    implements UseCase<DataState<BaseResponseModel>, Params> {
+    implements UseCase<DataState<BaseResponseModel>, AddToCartParams> {
   final CartRepository _cartRepository;
 
   AddToCartUseCase(this._cartRepository);
 
   @override
-  Future<DataState<BaseResponseModel>> call(Params params) {
+  Future<DataState<BaseResponseModel>> call(AddToCartParams params) {
     return _cartRepository.addToCart(
       quantity: params.quantity,
       productId: params.productId,
@@ -18,11 +18,11 @@ class AddToCartUseCase
   }
 }
 
-class Params {
+class AddToCartParams {
   final int quantity;
   final int productId;
 
-  const Params({
+  const AddToCartParams({
     required this.quantity,
     required this.productId,
   });

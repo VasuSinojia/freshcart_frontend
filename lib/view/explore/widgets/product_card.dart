@@ -1,7 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:freshcart_frontend/data/models/category/product.dart';
+import 'package:freshcart_frontend/modules/controllers/explore_products_controller.dart';
 import 'package:freshcart_frontend/view/widgets/add_to_cart_button.dart';
+import 'package:get/get.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
@@ -54,10 +56,15 @@ class ProductCard extends StatelessWidget {
                     ),
               ),
               AddToCartButton(
-                onTap: () {},
-              )
+                onTap: () {
+                  if (product.id != null) {
+                    Get.find<ExploreProductsController>()
+                        .addToCart(productId: product.id ?? 0);
+                  }
+                },
+              ),
             ],
-          )
+          ),
         ],
       ),
     );
