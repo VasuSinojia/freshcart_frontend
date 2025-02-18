@@ -34,9 +34,7 @@ extension SenderTypeToString on SenderType {
         return 'USER';
       case SenderType.Character:
         return 'CHARACTER';
-      default:
-        return 'USER';
-    }
+      }
   }
 }
 
@@ -60,9 +58,7 @@ extension ChatTypeToString on ChatType {
     switch (this) {
       case ChatType.ChatTypeText:
         return 'TEXT';
-      default:
-        return 'TEXT';
-    }
+      }
   }
 }
 
@@ -86,9 +82,7 @@ extension ChatTabFilterName on ChatTabFilter {
     switch (this) {
       case ChatTabFilter.ALL:
         return 'All Chats';
-      default:
-        return 'All Chats';
-    }
+      }
   }
 }
 
